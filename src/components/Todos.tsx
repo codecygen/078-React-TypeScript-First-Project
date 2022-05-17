@@ -1,4 +1,5 @@
 import Todo from "./models/todo";
+import ItemsList from "./models/ItemsList";
 
 // React-TypeScript-Variable-Declaration-For-Props
 // Here props set to generic type
@@ -11,9 +12,10 @@ import Todo from "./models/todo";
 const Todos: React.FC<{items: Todo[]}> = (props) => {
 
   const itemsList = props.items.map(item => (
-  <li key={item.id}>
-    {item.text}
-  </li>
+    <ItemsList
+      key={item.id}
+      text={item.text}
+    />
   ));
 
   return (
