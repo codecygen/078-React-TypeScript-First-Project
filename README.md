@@ -8,3 +8,4 @@
 # Keyword for TypeScript
 - **React-TypeScript-Variable-Declaration-For-Props**, this one shows how to properly declare the props in TypeScript. File is **/src/components.Todos.tsx**
 - **React-TypeScript-Classes**, there is a special file created for it **/src/components/models/todo.ts**. This is created with .ts extension because it is not a React component file.
+- **React-TypeScript-Form-Submission**, this section is handled in **/src/components/AddTodo.tsx**
