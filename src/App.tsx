@@ -1,3 +1,4 @@
+import AddTodo from './components/AddTodo';
 import Todos from './components/Todos';
 import Todo from './components/models/todo';
 
@@ -7,9 +8,17 @@ const App = () => {
     new Todo('Learn TypeScript')
   ];
 
+  // React-TypeScript-Variable-Declaration-For-Function-Argument
+  const addTodoHandler = (todoText: string) => {
+
+  };
+
   return (
 
     <div>
+      <AddTodo
+        onAddTodo={addTodoHandler}
+      />
       <Todos 
         items={todos}
       />
