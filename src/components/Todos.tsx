@@ -1,6 +1,8 @@
 import Todo from "./models/todo";
 import ItemsList from "./models/ItemsList";
 
+import classes from './Todos.module.css';
+
 // React-TypeScript-Variable-Declaration-For-Props
 // Here props set to generic type
 // <> this bracket is a generic type feature
@@ -19,7 +21,7 @@ const Todos: React.FC<{items: Todo[]}> = (props) => {
   ));
 
   return (
-    <ul>
+    <ul className={classes.todos}>
         {itemsList}
     </ul>
   );
