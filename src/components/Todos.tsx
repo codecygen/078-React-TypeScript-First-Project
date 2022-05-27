@@ -1,5 +1,7 @@
-import Todo from "./models/todo";
+import React, { useContext } from 'react';
 import ItemsList from "./models/ItemsList";
+
+import { TodosContext } from '../store/todos-context';
 
 import classes from "./Todos.module.css";
 
@@ -11,14 +13,14 @@ import classes from "./Todos.module.css";
 // this portion can be written like this in case we cannot get any items list
 // React.FC<{items: string[]}
 // Instead of a string list, this portion will accept the todo constructor class types.
-const Todos: React.FC<{ items: Todo[]; onRemoveTodo: (id: string) => void }> = (
-  props
-) => {
-  const itemsList = props.items.map((item) => (
+const Todos: React.FC = () => {
+  const todosCtx = useContext(TodosContext);
+
+  const itemsList = todosCtx.items.map((item) => (
     <ItemsList
       key={item.id}
       text={item.text}
-      onRemoveTodo={props.onRemoveTodo.bind(null, item.id)}
+      onRemoveTodo={todosCtx.removeTodo.bind(null, item.id)}
     />
   ));
 

@@ -1,11 +1,15 @@
-import { useRef } from "react";
+import { useRef, useContext } from "react";
 
+import { TodosContext } from "../store/todos-context";
 import classes from './AddTodo.module.css';
 
 //React-TypeScript-Form-Submission
 
 // React-TypeScript-Variable-Declaration-For-Props2
-const AddTodo: React.FC<{onAddTodo: (text: string) => void }> = (props) => {
+const AddTodo: React.FC = () => {
+  const todosCtx = useContext(TodosContext);
+
+
   // We have to specify what kind of ref object
   // we want to store here.
   // Here the starting value of the useRef is null. This has to be assigned.
@@ -30,7 +34,7 @@ const AddTodo: React.FC<{onAddTodo: (text: string) => void }> = (props) => {
       return;
     }
 
-    props.onAddTodo(enteredText);
+    todosCtx.addTodo(enteredText);
   };
 
   return (
